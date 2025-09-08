@@ -44,32 +44,32 @@ https://templatemo.com/tm-595-3d-coverflow
         // Image data with titles and descriptions
         const imageData = [
             {
-                title: "Mountain Landscape",
-                description: "Majestic peaks covered in snow during golden hour"
+                title: "Limpeza de Vidros",
+                description: "Remove sujeira, poeira e manchas, garantindo transparência e brilho."
             },
             {
-                title: "Forest Path",
-                description: "A winding trail through ancient woodland"
+                title: "Restauração de Superfícies Vitrificadas",
+                description: "Remoção de riscos e danos físicos por lixamento e polimento."
             },
             {
-                title: "Lake Reflection",
-                description: "Serene waters mirroring the surrounding landscape"
+                title: "Revitalização de Superfícies Vitrificadas",
+                description: "Elimina manchas d’água, calcário e resíduos."
             },
             {
-                title: "Ocean Sunset",
-                description: "Golden hour over endless ocean waves"
+                title: "Impermeabilização de Vidros",
+                description: "Aplica camada protetora hidrofóbica"
             },
             {
-                title: "Desert Dunes",
-                description: "Rolling sand dunes under vast blue skies"
+                title: "Revitalização de Perfis Metálicos ",
+                description: "Limpeza técnica e correção estética."
             },
             {
-                title: "Starry Night",
-                description: "Countless stars illuminating the dark sky"
+                title: "Revitalização de Cromados",
+                description: "Remoção de manchas, oxidação e polimento"
             },
             {
-                title: "Waterfall",
-                description: "Cascading water through lush green forest"
+                title: "Revitalização de Painéis em ACM",
+                description: "Recupera brilho e cor das placas de alumínio composto."
             }
         ];
 
