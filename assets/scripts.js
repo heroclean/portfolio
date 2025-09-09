@@ -43,33 +43,50 @@ https://templatemo.com/tm-595-3d-coverflow
 
         // Image data with titles and descriptions
         const imageData = [
+            //1
             {
-                title: "Limpeza de Vidros",
+                title: "Limpeza Técnica de Vidros",
                 description: "Remove sujeira, poeira e manchas, garantindo transparência e brilho."
             },
+            //2
             {
-                title: "Restauração de Superfícies Vitrificadas",
-                description: "Remoção de riscos e danos físicos por lixamento e polimento."
+                title: "Restauração Mecânica de Vidros - Lixamento e Polimento Técnico",
+                description: "Remoção de riscos superficiais e danos físicos por lixamento e polimento."
             },
+            //3
             {
-                title: "Revitalização de Superfícies Vitrificadas",
-                description: "Elimina manchas d’água, calcário e resíduos."
+                title: "Impermeabilização Técnica de Vidros – Barreira Protetora Hidrorrepelente",
+                description: "Aplica camada protetora hidrofóbica."
             },
+            //4
             {
-                title: "Impermeabilização de Vidros",
-                description: "Aplica camada protetora hidrofóbica"
+                title: "Revitalização Estética de Elementos Metálicos – Perfis e Esquadrias",
+                description: "Limpeza técnica e correção estética e revitalização do brilho e cor."
             },
+            //5
             {
-                title: "Revitalização de Perfis Metálicos ",
-                description: "Limpeza técnica e correção estética."
+                title: "Revitalização Técnica de Acabamentos Cromados – Cabinas e Painéis Inox",
+                description: "Remoção de manchas, oxidação e polimento."
             },
+            //6
             {
-                title: "Revitalização de Cromados",
-                description: "Remoção de manchas, oxidação e polimento"
+                title: "Revitalização Técnica de Revestimentos em ACM – Fachadas Arquitetônicas",
+                description: "Recupera brilho e cor das placas de alumínio composto, além de proteção de sujeiras."
             },
+            //7
             {
-                title: "Revitalização de Painéis em ACM",
-                description: "Recupera brilho e cor das placas de alumínio composto."
+                title: "Revitalização Estética de Pingadeiras",
+                description: "Limpeza e renovação estética externa, além de trazer novamente brilho e cor."
+            },
+            //8
+            {
+                title: "Limpeza Técnica Pós-Obra – Residencial e Corporativa",
+                description: "Remove resíduos, poeira fina e respingos de obra."
+            },
+            //9
+            {
+                title: "Limpeza Técnica de Forros – Tratamento de Superfícies Elevadas",
+                description: "Higienização de PVC, metálicos ou modulares."
             }
         ];
 
