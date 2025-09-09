@@ -290,38 +290,39 @@
                 </div>
 
                 <div class="contact-form-section">
-                    <form class="contact-form" action="https://formsubmit.co/herocleanservicos@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="name">Seu Nome</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Seu Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Objetivo</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
+  <form class="contact-form" id="contactForm">
+    <div class="form-group">
+      <label for="name">Seu Nome</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Seu Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="subject">Objetivo</label>
+      <input type="text" id="subject" name="subject" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Mensagem</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
 
-                        <!-- Config extra do FormSubmit -->
-                        <input type="hidden" name="_captcha" value="false"> <!-- sem captcha -->
-                        <input type="hidden" name="_next" value="https://SEU-USUARIO.github.io/obrigado.html">
-                        <!-- redireciona -->
-                        <input type="hidden" name="_subject" value="📩 Novo contato pelo site HeroClean">
-                        <!-- assunto fixo -->
-                        <input type="hidden" name="_template" value="table"> <!-- mensagem organizada -->
-                        <input type="hidden" name="_autoresponse"
-                            value="Olá! Recebemos sua mensagem e em breve entraremos em contato. Obrigado por falar com a HeroClean!">
-                        <!-- resposta automática -->
+    <!-- Config extra do FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="📩 Novo contato pelo site HeroClean">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_autoresponse"
+      value="Olá! Recebemos sua mensagem e em breve entraremos em contato. Obrigado por falar com a HeroClean!">
 
-                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
-                    </form>
-                </div>
+    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+  </form>
+
+  <!-- Mensagem de status -->
+  <p id="formStatus" style="display:none; margin-top:10px; color:green; font-weight:bold;">
+    ✅ Mensagem enviada com sucesso!
+  </p>
+</div>
 
             </div>
         </div>
@@ -349,7 +350,8 @@
     </div>
 
     <script src="assets/scripts.js"></script>
-
+    <script src="assets/envio.js"></script>
 </body>
 
 </html>
+
