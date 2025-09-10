@@ -46,7 +46,7 @@ const imageData = [
     { title: "Restauração Mecânica de Vidros - Lixamento e Polimento Técnico", description: "Remoção de riscos superficiais e danos físicos por lixamento e polimento." },
     { title: "Impermeabilização Técnica de Vidros – Barreira Protetora Hidrorrepelente", description: "Aplica camada protetora hidrofóbica." },
     { title: "Revitalização Estética de Elementos Metálicos – Perfis e Esquadrias", description: "Limpeza técnica e correção estética e revitalização do brilho e cor." },
-    { title: "Revitalização Técnica de Acabamentos Cromados – Cabinas e Painéis Inox", description: "Remoção de manchas, oxidação e polimento." },
+    { title: "Revitalização Técnica de Acabamentos Cromados – Cabinas e Painéis Inox", description: "Remoção de manchas e oxidação." },
     { title: "Revitalização Técnica de Revestimentos em ACM – Fachadas Arquitetônicas", description: "Recupera brilho e cor das placas de alumínio composto, além de proteção de sujeiras." },
     { title: "Revitalização Estética de Pingadeiras", description: "Limpeza e renovação estética externa, além de trazer novamente brilho e cor." },
     { title: "Limpeza Técnica Pós-Obra – Residencial e Corporativa", description: "Remove resíduos, poeira fina e respingos de obra." },
@@ -192,3 +192,4 @@ dots.forEach(dot => dot.addEventListener('click', handleUserInteraction));
 updateCoverflow();
 container.focus();
 startAutoplay();
+
