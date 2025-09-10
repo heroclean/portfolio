@@ -7,10 +7,13 @@
     <title>Portfólio da Empresa</title>
     <link href="assets/styles.css" rel="stylesheet">
 </head>
-<audio id="bg-music" loop>
-  <source src="assets/musica.mp3" type="audio/mpeg">
-</audio>
+
 <body>
+    <!-- Música de fundo -->
+    <audio id="bg-music" autoplay loop muted>
+        <source src="assets/musica.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Header -->
     <header class="header" id="header">
         <a href="#home" class="logo-container">
@@ -19,6 +22,19 @@
             </div>
             <div class="logo-text">Hero Clean</div>
         </a>
+    </header>
+
+    <script>
+        // Libera o áudio quando o usuário clicar em qualquer parte da página
+        document.addEventListener("click", () => {
+            const audio = document.getElementById("bg-music");
+            audio.muted = false;
+            audio.play();
+        }, { once: true }); // só precisa rodar uma vez
+    </script>
+</body>
+
+</html>
 
 
         <nav class="main-menu" id="mainMenu">
@@ -356,6 +372,7 @@
 </body>
 
 </html>
+
 
 
 
