@@ -193,3 +193,15 @@ updateCoverflow();
 container.focus();
 startAutoplay();
 
+
+// ============================================================
+// Accordion da secao de servicos (5 linhas de atuacao)
+// ============================================================
+document.querySelectorAll('.servicos-accordion .grupo-head').forEach(head => {
+    head.addEventListener('click', () => {
+        const grupo = head.closest('.grupo');
+        const abrindo = !grupo.classList.contains('aberto');
+        grupo.classList.toggle('aberto', abrindo);
+        head.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+    });
+});

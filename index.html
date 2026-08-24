@@ -4,7 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio da Empresa</title>
+
+    <title>Hero Clean — Limpeza Técnica de Vidros e Superfícies | Primavera do Leste MT</title>
+    <meta name="description"
+        content="Limpeza técnica de vidros, fachadas, metais e superfícies especiais em Primavera do Leste — MT. 20 serviços especializados, equipe uniformizada e vistoria prévia gratuita.">
+    <meta name="author" content="Hero Clean Serviços">
+    <link rel="canonical" href="https://heroclean.github.io/portfolio/">
+    <link rel="icon" href="logo/logo.gif">
+
+    <!-- Preview ao compartilhar o link (WhatsApp, Instagram, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hero Clean">
+    <meta property="og:title" content="Hero Clean — Especialistas em Limpeza Técnica">
+    <meta property="og:description"
+        content="Vidros, fachadas, metais e superfícies especiais. 20 serviços técnicos em Primavera do Leste — MT.">
+    <meta property="og:url" content="https://heroclean.github.io/portfolio/">
+    <meta property="og:image" content="https://heroclean.github.io/portfolio/images/servicos-01.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link href="assets/styles.css" rel="stylesheet">
 </head>
 
@@ -22,24 +39,11 @@
             </div>
             <div class="logo-text">Hero Clean</div>
         </a>
-    </header>
-
-    <script>
-        // Libera o áudio quando o usuário clicar em qualquer parte da página
-        document.addEventListener("click", () => {
-            const audio = document.getElementById("bg-music");
-            audio.muted = false;
-            audio.play();
-        }, { once: true }); // só precisa rodar uma vez
-    </script>
-</body>
-
-</html>
-
 
         <nav class="main-menu" id="mainMenu">
             <a href="#home" class="menu-item active">Início</a>
-            <a href="#about" class="menu-item">Seviços</a>
+            <a href="#servicos" class="menu-item">Serviços</a>
+            <a href="#about" class="menu-item">A Empresa</a>
             <a href="#contact" class="menu-item">Contatos</a>
         </nav>
 
@@ -54,63 +58,63 @@
     <section id="home" class="section">
         <div class="coverflow-wrapper">
             <div class="info">
-                <h2 id="current-title">Mountain Landscape</h2>
-                <p id="current-description">Majestic peaks covered in snow during golden hour</p>
+                <h2 id="current-title">Limpeza Técnica de Vidros</h2>
+                <p id="current-description">Remove sujeira, poeira e manchas, garantindo transparência e brilho.</p>
             </div>
 
             <div class="coverflow-container" tabindex="0">
                 <div class="coverflow" id="coverflow">
                     <div class="coverflow-item" data-index="0">
                         <div class="cover image-loading">
-                            <img src="images/servicos-01.jpg" alt="Mountain Landscape" loading="lazy">
+                            <img src="images/servicos-01.jpg" alt="Limpeza técnica de vidros" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="1">
                         <div class="cover image-loading">
-                            <img src="images/servicos-02.jpg" alt="Forest Path" loading="lazy">
+                            <img src="images/servicos-02.jpg" alt="Restauração mecânica de vidros — lixamento e polimento" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="2">
                         <div class="cover image-loading">
-                            <img src="images/servicos-03.jpg" alt="Lake Reflection" loading="lazy">
+                            <img src="images/servicos-03.jpg" alt="Impermeabilização técnica de vidros" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="3">
                         <div class="cover image-loading">
-                            <img src="images/servicos-04.jpg" alt="Ocean Sunset" loading="lazy">
+                            <img src="images/servicos-04.jpg" alt="Revitalização de elementos metálicos — perfis e esquadrias" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="4">
                         <div class="cover image-loading">
-                            <img src="images/servicos-05.jpg" alt="Desert Dunes" loading="lazy">
+                            <img src="images/servicos-05.jpg" alt="Revitalização de acabamentos cromados" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="5">
                         <div class="cover image-loading">
-                            <img src="images/servicos-06.jpg" alt="Starry Night" loading="lazy">
+                            <img src="images/servicos-06.jpg" alt="Revitalização de revestimentos em ACM" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="6">
                         <div class="cover image-loading">
-                            <img src="images/servicos-07.jpg" alt="Waterfall" loading="lazy">
+                            <img src="images/servicos-07.jpg" alt="Revitalização de pingadeiras" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="7">
                         <div class="cover image-loading">
-                            <img src="images/servicos-08.jpg" alt="Waterfall" loading="lazy">
+                            <img src="images/servicos-08.jpg" alt="Limpeza técnica pós-obra" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
                     <div class="coverflow-item" data-index="8">
                         <div class="cover image-loading">
-                            <img src="images/servicos-09.jpg" alt="Waterfall" loading="lazy">
+                            <img src="images/servicos-09.jpg" alt="Limpeza técnica de forros" loading="lazy">
                         </div>
                         <div class="reflection"></div>
                     </div>
@@ -129,6 +133,285 @@
             </div>
         </div>
     </section>
+    <!-- Servicos Section -->
+    <section id="servicos" class="section">
+        <div class="servicos-content">
+            <div class="servicos-header">
+                <h2>Nossos Serviços</h2>
+                <p>São 20 serviços técnicos especializados, organizados em cinco linhas de atuação.
+                   A vistoria prévia é gratuita e define a combinação ideal para cada ambiente.</p>
+            </div>
+
+            <div class="servicos-accordion">
+                <div class="grupo aberto">
+                    <button class="grupo-head" type="button" aria-expanded="true">
+                        <span class="grupo-seta" aria-hidden="true">▶</span>
+                        <span class="grupo-nome">Vidros e Fachadas</span>
+                        <span class="grupo-faixa">6 serviços · 01 – 06</span>
+                    </button>
+                    <div class="grupo-corpo">
+                        <div class="servicos-grid">
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-01.jpg" alt="Limpeza Técnica de Vidros" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">01</span>
+                                    <h3>Limpeza Técnica de Vidros</h3>
+                                    <p>Três níveis de intervenção conforme o estado da superfície</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-03.jpg" alt="Impermeabilização Técnica de Vidros" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">02</span>
+                                    <h3>Impermeabilização Técnica de Vidros</h3>
+                                    <p>Barreira hidrorrepelente de longa duração</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-02.jpg" alt="Restauração Mecânica de Vidros — Polimento" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">03</span>
+                                    <h3>Restauração Mecânica de Vidros — Polimento</h3>
+                                    <p>Remoção de riscos, corrosões e incrustações por abrasão controlada</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-06.jpg" alt="Revitalização de Revestimentos em ACM" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">04</span>
+                                    <h3>Revitalização de Revestimentos em ACM</h3>
+                                    <p>Fachadas arquitetônicas — alumínio composto recuperado</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>05</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">05</span>
+                                    <h3>Higienização de Juntas de Vedação de Fachadas</h3>
+                                    <p>Silicones e selantes — uniformidade estética recuperada</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-07.jpg" alt="Revitalização de Pingadeiras" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">06</span>
+                                    <h3>Revitalização de Pingadeiras</h3>
+                                    <p>Peitoris externos — limpeza e renovação estética completa</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="grupo">
+                    <button class="grupo-head" type="button" aria-expanded="false">
+                        <span class="grupo-seta" aria-hidden="true">▶</span>
+                        <span class="grupo-nome">Metais e Esquadrias</span>
+                        <span class="grupo-faixa">3 serviços · 07 – 09</span>
+                    </button>
+                    <div class="grupo-corpo">
+                        <div class="servicos-grid">
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-04.jpg" alt="Revitalização de Elementos Metálicos" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">07</span>
+                                    <h3>Revitalização de Elementos Metálicos</h3>
+                                    <p>Perfis e esquadrias — restauração do brilho e cor originais</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-05.jpg" alt="Revitalização de Acabamentos Cromados" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">08</span>
+                                    <h3>Revitalização de Acabamentos Cromados</h3>
+                                    <p>Cabinas, painéis e frisos inox — efeito espelhado restaurado</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>09</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">09</span>
+                                    <h3>Limpeza Técnica de Esquadrias</h3>
+                                    <p>Perfis, trilhos, grades e portões — remoção de resíduos aderidos</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="grupo">
+                    <button class="grupo-head" type="button" aria-expanded="false">
+                        <span class="grupo-seta" aria-hidden="true">▶</span>
+                        <span class="grupo-nome">Pintura e Madeira</span>
+                        <span class="grupo-faixa">2 serviços · 10 – 11</span>
+                    </button>
+                    <div class="grupo-corpo">
+                        <div class="servicos-grid">
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>10</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">10</span>
+                                    <h3>Pintura</h3>
+                                    <p>Preparo de substrato, aplicação técnica e acabamento uniforme</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>11</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">11</span>
+                                    <h3>Revitalização de Madeira</h3>
+                                    <p>Lixamento, correção e acabamento em esmalte ou verniz</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="grupo">
+                    <button class="grupo-head" type="button" aria-expanded="false">
+                        <span class="grupo-seta" aria-hidden="true">▶</span>
+                        <span class="grupo-nome">Pós-Obra e Superfícies</span>
+                        <span class="grupo-faixa">4 serviços · 12 – 15</span>
+                    </button>
+                    <div class="grupo-corpo">
+                        <div class="servicos-grid">
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-08.jpg" alt="Limpeza Técnica Pós-Obra" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">12</span>
+                                    <h3>Limpeza Técnica Pós-Obra</h3>
+                                    <p>Residencial e corporativa — ambiente pronto para entrega</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>13</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">13</span>
+                                    <h3>Limpeza Pós-Obra Detalhada</h3>
+                                    <p>Nível ampliado — aspiração industrial e higienização item a item</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>14</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">14</span>
+                                    <h3>Tratamento de Pisos</h3>
+                                    <p>Limpeza profunda, proteção e alto brilho conforme o material</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto">
+                                    <img src="images/servicos-09.jpg" alt="Limpeza Técnica de Forros" loading="lazy">
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">15</span>
+                                    <h3>Limpeza Técnica de Forros</h3>
+                                    <p>Superfícies elevadas — PVC, metálico e modular</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="grupo">
+                    <button class="grupo-head" type="button" aria-expanded="false">
+                        <span class="grupo-seta" aria-hidden="true">▶</span>
+                        <span class="grupo-nome">Higienização Especializada</span>
+                        <span class="grupo-faixa">5 serviços · 16 – 20</span>
+                    </button>
+                    <div class="grupo-corpo">
+                        <div class="servicos-grid">
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>16</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">16</span>
+                                    <h3>Higienização de Lustres e Luminárias</h3>
+                                    <p>Superfícies refletoras e difusoras — eficiência luminosa recuperada</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>17</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">17</span>
+                                    <h3>Limpeza de Placas Solares</h3>
+                                    <p>Módulos fotovoltaicos — geração restaurada com método seguro</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>18</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">18</span>
+                                    <h3>Higienização de Equipamentos Fitness e Maquinários</h3>
+                                    <p>Academias e maquinários — sanitização sem oxidar componentes</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>19</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">19</span>
+                                    <h3>Higienização Têxtil Profunda e Extração</h3>
+                                    <p>Carpetes e estofados — injeção e extração sem encharcamento</p>
+                                </div>
+                            </article>
+                            <article class="servico-card">
+                                <div class="servico-foto sem-imagem" aria-hidden="true">
+                                    <span>20</span>
+                                </div>
+                                <div class="servico-txt">
+                                    <span class="servico-num">20</span>
+                                    <h3>Sanitização de Colchonetes e Estofados Esportivos</h3>
+                                    <p>Courvin e PVC — desinfecção que preserva o revestimento</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicos-cta">
+                <p>Quer o catálogo completo, com especificações técnicas de cada serviço?</p>
+                <a href="catalogo-hero-clean.pdf" class="cta-button" target="_blank" rel="noopener">
+                    Baixar catálogo em PDF
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="section">
         <div class="about-content">
@@ -147,7 +430,7 @@
                             <div class="corner-decoration bottom-right"></div>
 
                             <div class="showcase-logo">
-                                <img src="logo/logo.gif" alt="Logo 3D Coverflow" class="showcase-gif">
+                                <img src="logo/logo.gif" alt="Hero Clean" class="showcase-gif">
                             </div>
 
 
@@ -156,14 +439,11 @@
                             </p>
 
                             <div class="showcase-badges">
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
-                                    rel="noopener noreferrer" class="badge">Fachadas</a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"
-                                    rel="noopener noreferrer" class="badge">Calçadas</a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
-                                    rel="noopener noreferrer" class="badge">Recepções</a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design"
-                                    target="_blank" rel="noopener noreferrer" class="badge">Interiores</a>
+                                <a href="#servicos" class="badge">Vidros</a>
+                                <a href="#servicos" class="badge">Metais</a>
+                                <a href="#servicos" class="badge">Pintura</a>
+                                <a href="#servicos" class="badge">Pós-Obra</a>
+                                <a href="#servicos" class="badge">Higienização</a>
                             </div>
                         </div>
                     </div>
@@ -178,10 +458,10 @@
                         Por isso, oferecemos a terceirização de mão de obra como uma de nossas principais soluções.</p>
 
                     <ul class="feature-list">
-                        <li>Vidros</li>
-                        <li>Superfícies Metálicas</li>
-                        <li>Revestimentos Especiais</li>
-                        <li>Pedras e Mármores</li>
+                        <li>Vidros, fachadas e revestimentos em ACM</li>
+                        <li>Superfícies metálicas, inox e cromados</li>
+                        <li>Pedras, mármores, pisos e pingadeiras</li>
+                        <li>Pós-obra, forros e higienização especializada</li>
                     </ul>
 
                     <a href="#contact" class="cta-button">
@@ -350,14 +630,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-copyright">
-                © 2025 3D Coverflow. Todos os direitos reservados. | Design por<a
-                    href="https://herocleanservicos@gmail.com" target="_blank" rel="noopener noreferrer"> EDUARDO</a>
+                © 2026 Hero Clean Serviços · CNPJ 58.840.370/0001-17 · Primavera do Leste — MT
+                | Design por <a href="mailto:herocleanservicos@gmail.com">EDUARDO</a>
             </div>
             <div class="footer-links">
-                <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy
-                    Policy</a>
-                <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Termos
-                    de Serviço</a>
+                <a href="catalogo-hero-clean.pdf" target="_blank" rel="noopener">Catálogo em PDF</a>
+                <a href="https://wa.me/5566999078833" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://www.instagram.com/hero_cleanpva/" target="_blank" rel="noopener">Instagram</a>
             </div>
         </div>
     </footer>
@@ -369,6 +648,15 @@
 
     <script src="assets/scripts.js"></script>
     <script src="assets/envio.js"></script>
+
+    <script>
+        // Libera o audio quando o usuario clicar em qualquer parte da pagina
+        document.addEventListener("click", () => {
+            const audio = document.getElementById("bg-music");
+            audio.muted = false;
+            audio.play();
+        }, { once: true });
+    </script>
 </body>
 
 </html>

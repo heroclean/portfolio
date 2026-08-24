@@ -1281,3 +1281,271 @@ body {
     }
 
 }
+
+/* ============================================================
+   Secao Servicos — catalogo completo (20 servicos)
+   ============================================================ */
+
+#servicos {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
+    align-items: flex-start;
+    padding: 120px 40px 100px;
+}
+
+.servicos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.servicos-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.servicos-header h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.servicos-header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ---- accordion por linha de atuacao ---- */
+.servicos-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.grupo {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
+}
+
+.grupo.aberto {
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.grupo-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.grupo-head:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.grupo-head:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: -2px;
+}
+
+.grupo-seta {
+    color: #667eea;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.grupo.aberto .grupo-seta {
+    transform: rotate(90deg);
+}
+
+.grupo-nome {
+    font-size: 20px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.grupo-faixa {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+}
+
+.grupo-corpo {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+}
+
+.grupo.aberto .grupo-corpo {
+    grid-template-rows: 1fr;
+}
+
+.grupo-corpo > * {
+    overflow: hidden;
+    /* sem isto o grid item nao colapsa em 0fr e as bordas dos cards vazam */
+    min-height: 0;
+}
+
+/* ---- cards de servico ---- */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* padding vertical so no estado aberto: senao a row nao colapsa em 0fr */
+    padding: 0 28px;
+    transition: padding 0.4s ease;
+}
+
+.grupo.aberto .servicos-grid {
+    padding: 8px 28px 28px;
+}
+
+.servico-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.18);
+}
+
+.servico-foto {
+    height: 140px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.servico-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.servico-card:hover .servico-foto img {
+    transform: scale(1.06);
+}
+
+.servico-txt {
+    padding: 18px 20px 22px;
+    flex: 1;
+}
+
+.servico-num {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.servico-txt h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.servico-txt p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---- chamada para o PDF ---- */
+.servicos-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.servicos-cta p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #servicos {
+        padding: 100px 20px 80px;
+    }
+
+    .servicos-header h2 {
+        font-size: 32px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        padding: 0 18px;
+    }
+
+    .grupo-head {
+        padding: 18px 20px;
+        flex-wrap: wrap;
+    }
+
+    .grupo-nome {
+        font-size: 17px;
+    }
+
+    .grupo-faixa {
+        width: 100%;
+        padding-left: 28px;
+    }
+}
+
+/* card sem foto cadastrada: mantem a altura da grade */
+.servico-foto.sem-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.18) 0%, rgba(118, 75, 162, 0.18) 100%);
+}
+
+.servico-foto.sem-imagem span {
+    font-size: 54px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.13);
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    .grupo.aberto .servicos-grid {
+        padding: 8px 18px 22px;
+    }
+}
