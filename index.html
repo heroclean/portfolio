@@ -26,10 +26,6 @@
 </head>
 
 <body>
-    <!-- Música de fundo -->
-    <audio id="bg-music" autoplay loop muted>
-        <source src="assets/musica.mp3" type="audio/mpeg">
-    </audio>
 
     <!-- Header -->
     <header class="header" id="header">
@@ -649,14 +645,6 @@
     <script src="assets/scripts.js"></script>
     <script src="assets/envio.js"></script>
 
-    <script>
-        // Libera o audio quando o usuario clicar em qualquer parte da pagina
-        document.addEventListener("click", () => {
-            const audio = document.getElementById("bg-music");
-            audio.muted = false;
-            audio.play();
-        }, { once: true });
-    </script>
 </body>
 
 </html>

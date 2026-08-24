@@ -67,13 +67,6 @@ let isPlaying = true;
 const playIcon = document.querySelector('.play-icon');
 const pauseIcon = document.querySelector('.pause-icon');
 
-// Música de fundo
-const music = document.getElementById("bg-music");
-if (music) {
-    music.loop = true;
-    music.muted = true; // começa mudo (evita bloqueio do navegador)
-}
-
 // Atualiza coverflow
 function updateCoverflow() {
     if (isAnimating) return;
@@ -142,7 +135,7 @@ function goToIndex(index) {
     updateCoverflow();
 }
 
-// Autoplay + música
+// Autoplay do carrossel
 function startAutoplay() {
     autoplayInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % items.length;
@@ -151,13 +144,6 @@ function startAutoplay() {
     isPlaying = true;
     playIcon.style.display = 'none';
     pauseIcon.style.display = 'block';
-
-    if (music) {
-        music.muted = false;
-        music.play().catch(() => {
-            console.log("Navegador bloqueou o autoplay, clique para liberar.");
-        });
-    }
 }
 function stopAutoplay() {
     if (autoplayInterval) {
@@ -167,8 +153,6 @@ function stopAutoplay() {
     isPlaying = false;
     playIcon.style.display = 'block';
     pauseIcon.style.display = 'none';
-
-    if (music) music.pause();
 }
 function toggleAutoplay() {
     if (isPlaying) stopAutoplay();
