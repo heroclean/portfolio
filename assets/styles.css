@@ -1710,33 +1710,42 @@ body {
     font-size: 14px;
 }
 
-/* botao flutuante do WhatsApp — fica acima do "voltar ao topo" */
-.whatsapp-float {
+/* pilha de canais flutuantes — o WhatsApp fica embaixo, mais perto do polegar,
+   e os outros sobem a partir dele. Acima do "voltar ao topo". */
+.flutuantes {
     position: fixed;
-    bottom: 95px;
     right: 30px;
-    width: 56px;
-    height: 56px;
-    background: #25D366;
+    bottom: 95px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.flutuante {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 24px rgba(37, 211, 102, .45);
-    z-index: 999;
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.whatsapp-float svg {
-    width: 30px;
-    height: 30px;
-    fill: white;
-}
+.flutuante svg { width: 27px; height: 27px; fill: white; }
+.flutuante:hover { transform: scale(1.08); }
 
-.whatsapp-float:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 32px rgba(37, 211, 102, .6);
-}
+/* o WhatsApp e o principal: um pouco maior que os outros */
+.fl-whatsapp { width: 58px; height: 58px; background: #25D366; box-shadow: 0 8px 24px rgba(37, 211, 102, .45); }
+.fl-whatsapp svg { width: 31px; height: 31px; }
+.fl-whatsapp:hover { box-shadow: 0 12px 32px rgba(37, 211, 102, .6); }
+
+.fl-instagram { background: linear-gradient(45deg, #f09433, #dc2743 45%, #bc1888); box-shadow: 0 8px 24px rgba(220, 39, 67, .4); }
+.fl-instagram:hover { box-shadow: 0 12px 32px rgba(220, 39, 67, .6); }
+
+.fl-google { background: #4285F4; box-shadow: 0 8px 24px rgba(66, 133, 244, .4); }
+.fl-google:hover { box-shadow: 0 12px 32px rgba(66, 133, 244, .6); }
 
 /* =====================================================================
    Responsivo da secao de clientes
@@ -1752,8 +1761,11 @@ body {
     .segmentos-grid { grid-template-columns: 1fr; gap: 16px; }
     .segmento { padding: 22px 20px; }
     .selos { grid-template-columns: 1fr; gap: 16px; padding: 24px 20px; }
-    .whatsapp-float { bottom: 88px; right: 20px; width: 52px; height: 52px; }
-    .whatsapp-float svg { width: 27px; height: 27px; }
+    .flutuantes { bottom: 88px; right: 18px; gap: 9px; }
+    .flutuante { width: 44px; height: 44px; }
+    .flutuante svg { width: 23px; height: 23px; }
+    .fl-whatsapp { width: 50px; height: 50px; }
+    .fl-whatsapp svg { width: 27px; height: 27px; }
     /* rotulo de 3 palavras nao pode espremer o numero */
     .stat-label { font-size: 13px; }
 }
