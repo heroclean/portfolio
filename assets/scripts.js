@@ -189,3 +189,41 @@ document.querySelectorAll('.servicos-accordion .grupo-head').forEach(head => {
         head.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
     });
 });
+
+
+// ============================================================
+// Faixa de numeros: conta de 0 ate o valor quando entra na tela
+// (os valores vem do Vegon; ver comentario no index.html)
+// ============================================================
+(function () {
+    const alvos = document.querySelectorAll('.stat-number[data-conta]');
+    if (!alvos.length) return;
+
+    // sem IntersectionObserver o numero ja esta no HTML: nada a fazer
+    if (!('IntersectionObserver' in window)) return;
+
+    const anima = el => {
+        const fim = parseInt(el.dataset.conta, 10);
+        const prefixo = el.dataset.prefixo || '';
+        if (!fim) return;
+        const duracao = 1400;
+        const inicio = performance.now();
+        const passo = agora => {
+            const t = Math.min((agora - inicio) / duracao, 1);
+            const suave = 1 - Math.pow(1 - t, 3); // desacelera no fim
+            el.textContent = prefixo + Math.round(fim * suave);
+            if (t < 1) requestAnimationFrame(passo);
+        };
+        requestAnimationFrame(passo);
+    };
+
+    const obs = new IntersectionObserver((entradas) => {
+        entradas.forEach(e => {
+            if (!e.isIntersecting) return;
+            anima(e.target);
+            obs.unobserve(e.target); // anima uma vez so
+        });
+    }, { threshold: 0.4 });
+
+    alvos.forEach(el => obs.observe(el));
+})();

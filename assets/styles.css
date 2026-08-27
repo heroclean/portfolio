@@ -1529,23 +1529,231 @@ body {
     }
 }
 
-/* card sem foto cadastrada: mantem a altura da grade */
+/* card sem foto cadastrada: placeholder da marca, mesma altura da grade */
 .servico-foto.sem-imagem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.18) 0%, rgba(118, 75, 162, 0.18) 100%);
+    position: relative;
+    background:
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0 10px, rgba(255, 255, 255, 0) 10px 22px),
+        linear-gradient(135deg, rgba(102, 126, 234, 0.18) 0%, rgba(118, 75, 162, 0.18) 100%);
+}
+
+/* veu com a cor da linha de atuacao do servico */
+.servico-foto.sem-imagem::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--tint, #667eea);
+    opacity: 0.2;
+}
+
+/* marca dagua da Hero Clean */
+.servico-foto.sem-imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../logo/logo.gif") no-repeat center / 74px 74px;
+    filter: grayscale(1) brightness(3);
+    opacity: 0.16;
 }
 
 .servico-foto.sem-imagem span {
-    font-size: 54px;
+    position: absolute;
+    right: 12px;
+    bottom: 9px;
+    z-index: 1;
+    font-size: 13px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.13);
-    letter-spacing: -0.02em;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 768px) {
     .grupo.aberto .servicos-grid {
         padding: 8px 18px 22px;
     }
+}
+
+
+/* =====================================================================
+   Secao "Quem ja confia na Hero Clean" (#clientes)
+   Perfis de cliente, sem citar nome de terceiro. Numeros reais ficam na
+   faixa de estatisticas da secao "A Empresa".
+   ===================================================================== */
+#clientes {
+    background: radial-gradient(ellipse at top, #16162a 0%, #0f0f0f 100%);
+}
+
+.clientes-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    color: white;
+    width: 100%;
+}
+
+.segmentos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.segmento {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 28px 24px;
+    transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+
+.segmento:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+.segmento-icone {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(102, 126, 234, .18) 0%, rgba(118, 75, 162, .18) 100%);
+    border: 1px solid rgba(102, 126, 234, .35);
+    margin-bottom: 18px;
+}
+
+.segmento-icone svg {
+    width: 24px;
+    height: 24px;
+    color: #8fa2f5;
+}
+
+.segmento h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: white;
+    line-height: 1.35;
+}
+
+.segmento p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* selos: os diferenciais que antes ficavam na faixa de numeros */
+.selos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 28px 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    margin-bottom: 45px;
+}
+
+.selo {
+    text-align: center;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.selo-forte {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.clientes-cta {
+    text-align: center;
+}
+
+.clientes-cta p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 22px;
+}
+
+/* =====================================================================
+   Canais de contato: cada botao ganha a cor da propria marca no hover
+   ===================================================================== */
+.social-btn.wa:hover { background: #25D366; box-shadow: 0 10px 20px rgba(37, 211, 102, .35); }
+.social-btn.ig:hover { background: linear-gradient(45deg, #f09433, #dc2743 45%, #bc1888); box-shadow: 0 10px 20px rgba(220, 39, 67, .35); }
+.social-btn.gm:hover { background: #EA4335; box-shadow: 0 10px 20px rgba(234, 67, 53, .35); }
+.social-btn.gg:hover { background: #4285F4; box-shadow: 0 10px 20px rgba(66, 133, 244, .35); }
+
+.contact-item > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.contact-text a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.contact-text a:hover { color: #8fa2f5; }
+
+.link-mapa {
+    color: #8fa2f5 !important;
+    font-size: 14px;
+}
+
+/* botao flutuante do WhatsApp — fica acima do "voltar ao topo" */
+.whatsapp-float {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, .45);
+    z-index: 999;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, .6);
+}
+
+/* =====================================================================
+   Responsivo da secao de clientes
+   ===================================================================== */
+@media (max-width: 1024px) {
+    .segmentos-grid { grid-template-columns: repeat(2, 1fr); }
+    .selos { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    #clientes { min-height: auto; padding: 80px 0 60px; }
+    .clientes-content { padding: 20px; }
+    .segmentos-grid { grid-template-columns: 1fr; gap: 16px; }
+    .segmento { padding: 22px 20px; }
+    .selos { grid-template-columns: 1fr; gap: 16px; padding: 24px 20px; }
+    .whatsapp-float { bottom: 88px; right: 20px; width: 52px; height: 52px; }
+    .whatsapp-float svg { width: 27px; height: 27px; }
+    /* rotulo de 3 palavras nao pode espremer o numero */
+    .stat-label { font-size: 13px; }
 }
