@@ -227,3 +227,66 @@ document.querySelectorAll('.servicos-accordion .grupo-head').forEach(head => {
 
     alvos.forEach(el => obs.observe(el));
 })();
+
+/* ---- Galeria "Serviços Executados": lightbox ---- */
+(function () {
+    const itens = Array.from(document.querySelectorAll('.galeria-item'));
+    const caixa = document.getElementById('galeriaLightbox');
+    if (!itens.length || !caixa) return;
+
+    const img     = document.getElementById('glImg');
+    const titulo  = document.getElementById('glTitulo');
+    const legenda = document.getElementById('glLegenda');
+    const btnFechar = caixa.querySelector('.gl-fechar');
+    const btnPrev   = caixa.querySelector('.gl-prev');
+    const btnNext   = caixa.querySelector('.gl-next');
+
+    let atual = 0;
+    let origem = null; // pra devolver o foco ao fechar
+
+    const mostra = i => {
+        atual = (i + itens.length) % itens.length; // circular nas duas pontas
+        const item = itens[atual];
+        const foto = item.querySelector('img');
+        img.src = foto.getAttribute('src');
+        img.alt = foto.getAttribute('alt') || '';
+        titulo.textContent  = item.dataset.titulo || '';
+        legenda.textContent = item.dataset.legenda || '';
+    };
+
+    const abre = i => {
+        origem = document.activeElement;
+        mostra(i);
+        caixa.hidden = false;
+        document.body.style.overflow = 'hidden';
+        btnFechar.focus();
+    };
+
+    const fecha = () => {
+        caixa.hidden = true;
+        document.body.style.overflow = '';
+        img.src = '';
+        if (origem && origem.focus) origem.focus();
+    };
+
+    itens.forEach((item, i) => {
+        item.addEventListener('click', () => abre(i));
+        item.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abre(i); }
+        });
+    });
+
+    btnFechar.addEventListener('click', fecha);
+    btnPrev.addEventListener('click', () => mostra(atual - 1));
+    btnNext.addEventListener('click', () => mostra(atual + 1));
+
+    // clique no fundo fecha; clique na imagem/botoes nao
+    caixa.addEventListener('click', e => { if (e.target === caixa) fecha(); });
+
+    document.addEventListener('keydown', e => {
+        if (caixa.hidden) return;
+        if (e.key === 'Escape')     fecha();
+        if (e.key === 'ArrowLeft')  mostra(atual - 1);
+        if (e.key === 'ArrowRight') mostra(atual + 1);
+    });
+})();
