@@ -2021,3 +2021,51 @@ body {
     .galeria-legenda { display: none; }
     .gl-nav { width: 40px; height: 40px; font-size: 24px; }
 }
+
+/* ---- card antes/depois: ocupa duas colunas e vem com as etiquetas ---- */
+.galeria-item.duplo {
+    grid-column: span 2;
+    /* a imagem e o hstack de dois quadros 3/4, entao fecha 3/2 exato */
+    aspect-ratio: 3 / 2;
+}
+
+/* linha divisoria no meio, marcando onde termina o antes e comeca o depois */
+.galeria-item.duplo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-1px);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+.ad-tag {
+    position: absolute;
+    top: 12px;
+    z-index: 1;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(3px);
+}
+
+.ad-antes  { left: 12px; }
+.ad-depois { left: calc(50% + 12px); background: rgba(102, 126, 234, 0.75); border-color: rgba(255, 255, 255, 0.45); }
+
+@media (max-width: 768px) {
+    /* em 2 colunas o card duplo vira a linha inteira */
+    .galeria-item.duplo { grid-column: span 2; }
+    .ad-tag { top: 8px; font-size: 9.5px; padding: 4px 9px; letter-spacing: 0.8px; }
+    .ad-antes  { left: 8px; }
+    .ad-depois { left: calc(50% + 8px); }
+}
