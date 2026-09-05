@@ -290,3 +290,41 @@ document.querySelectorAll('.servicos-accordion .grupo-head').forEach(head => {
         if (e.key === 'ArrowRight') mostra(atual + 1);
     });
 })();
+
+// De onde veio a visita: ?de=insta marca o contato como vindo do Instagram
+(() => {
+    const canais = {
+        insta:     'Instagram',
+        instagram: 'Instagram',
+        bio:       'Instagram',
+        google:    'Google',
+        card:      'cartao'
+    };
+
+    // sessionStorage quebra em modo anonimo/bloqueado: nunca deixa estourar
+    const lembra = (valor) => {
+        try {
+            if (valor) sessionStorage.setItem('hc_origem', valor);
+            return valor || sessionStorage.getItem('hc_origem');
+        } catch (e) { return valor; }
+    };
+
+    const param = new URLSearchParams(location.search);
+    const bruto = (param.get('de') || param.get('utm_source') || '').toLowerCase();
+    const canal = lembra(canais[bruto] || null);
+
+    if (!canal) return;
+
+    const frase   = `Olá! Vim pelo ${canal}, gostaria de um orçamento.`;
+    const assunto = `Orçamento Hero Clean (${canal})`;
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+        const [numero] = a.getAttribute('href').split('?');
+        a.href = numero + '?text=' + encodeURIComponent(frase);
+    });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+        const [conta] = a.getAttribute('href').split('?');
+        a.href = `${conta}?subject=${encodeURIComponent(assunto)}`;
+    });
+})();

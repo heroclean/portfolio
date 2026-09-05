@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrindo o WhatsApp — Hero Clean</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="logo/logo.gif">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
+            background-attachment: fixed;
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.75;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .aviso img { width: 64px; height: 64px; border-radius: 14px; }
+        .aviso p   { margin-top: 18px; }
+
+        .aviso a {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 26px;
+            border-radius: 999px;
+            background: #25d366;
+            color: #0f0f0f;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aviso">
+        <img src="logo/logo.gif" alt="Hero Clean">
+        <p>Abrindo o WhatsApp da Hero Clean...</p>
+        <a id="destino" href="https://wa.me/5566999078833">Abrir agora</a>
+    </div>
+
+    <script>
+        // Ponte pro WhatsApp: o link publicado fica limpo, sem %C3 nenhum.
+        // Instagram e afins reescrevem URL com acento codificado; aqui a
+        // mensagem so e montada no navegador, entao nada chega remontado.
+        (() => {
+            const canais = {
+                insta:     'Instagram',
+                instagram: 'Instagram',
+                bio:       'Instagram',
+                google:    'Google',
+                card:      'cartao'
+            };
+
+            const de    = (new URLSearchParams(location.search).get('de') || '').toLowerCase();
+            const canal = canais[de] || 'site';
+            const frase = `Olá! Vim pelo ${canal}, gostaria de um orçamento.`;
+            const alvo  = 'https://wa.me/5566999078833?text=' + encodeURIComponent(frase);
+
+            document.getElementById('destino').href = alvo;
+            location.replace(alvo);
+        })();
+    </script>
+
+</body>
+</html>
